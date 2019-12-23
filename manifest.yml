@@ -1,0 +1,13 @@
+---
+applications:
+  - name: greeting
+    memory: 1G
+    instances: 1
+    path: ./build/libs/greeting-0.0.1-SNAPSHOT.jar
+    services:
+      - config-server
+      - service-registry
+    env:
+      TRUST_CERTS: api.run.pivotal.io
+    routes:
+      - route: greeting-piyali.cfapps.io
